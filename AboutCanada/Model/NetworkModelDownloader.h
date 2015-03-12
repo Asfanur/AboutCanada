@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NetworkModelDownloader : NSObject
-
+typedef void (^ModelCompletionBlock) (NSDictionary *model, NSError * error);
++(void)fetchCountryInfoWithCompletionBlock:(ModelCompletionBlock)completionBlock;
 @end

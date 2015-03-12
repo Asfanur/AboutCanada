@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "NetworkModelDownloader.h"
 
 @interface AboutCanadaTests : XCTestCase
 
@@ -25,16 +26,19 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+-(void)testNetworkModelDownloader {
+    
+    XCTestExpectation *completionExpectation = [self expectationWithDescription:@"Network Model Downloader"];
+    [NetworkModelDownloader fetchCountryInfoWithCompletionBlock:^(NSDictionary *model, NSError *error) {
+        
+        XCTAssertNotNil(model, @"data should not be nil");
+         
+        [completionExpectation fulfill];
+        
     }];
+    [self waitForExpectationsWithTimeout:5.0 handler:nil];
+    
+    
 }
 
 @end

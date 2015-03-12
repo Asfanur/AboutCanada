@@ -11,7 +11,6 @@
 		3A3856451AB163A300A5A13B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3856441AB163A300A5A13B /* AppDelegate.m */; };
 		3A38564B1AB163A300A5A13B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3856491AB163A300A5A13B /* Main.storyboard */; };
 		3A38564D1AB163A300A5A13B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A38564C1AB163A300A5A13B /* Images.xcassets */; };
-		3A3856501AB163A300A5A13B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A38564E1AB163A300A5A13B /* LaunchScreen.xib */; };
 		3A38565C1AB163A300A5A13B /* AboutCanadaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38565B1AB163A300A5A13B /* AboutCanadaTests.m */; };
 		3A3856681AB1656D00A5A13B /* NetworkModelDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3856671AB1656D00A5A13B /* NetworkModelDownloader.m */; };
 /* End PBXBuildFile section */
@@ -34,7 +33,6 @@
 		3A3856441AB163A300A5A13B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3A38564A1AB163A300A5A13B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A38564C1AB163A300A5A13B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3A38564F1AB163A300A5A13B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3A3856551AB163A300A5A13B /* AboutCanadaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AboutCanadaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A38565A1AB163A300A5A13B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A38565B1AB163A300A5A13B /* AboutCanadaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutCanadaTests.m; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 				3A3856661AB1656D00A5A13B /* NetworkModelDownloader.h */,
 				3A3856671AB1656D00A5A13B /* NetworkModelDownloader.m */,
 				3A38564C1AB163A300A5A13B /* Images.xcassets */,
-				3A38564E1AB163A300A5A13B /* LaunchScreen.xib */,
 				3A38563F1AB163A300A5A13B /* Supporting Files */,
 			);
 			path = AboutCanada;
@@ -208,7 +205,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A38564B1AB163A300A5A13B /* Main.storyboard in Resources */,
-				3A3856501AB163A300A5A13B /* LaunchScreen.xib in Resources */,
 				3A38564D1AB163A300A5A13B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,14 +254,6 @@
 				3A38564A1AB163A300A5A13B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3A38564E1AB163A300A5A13B /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A38564F1AB163A300A5A13B /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

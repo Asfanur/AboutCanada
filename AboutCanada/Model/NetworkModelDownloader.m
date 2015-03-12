@@ -10,4 +10,12 @@
 
 @implementation NetworkModelDownloader
 
++(void)fetchCountryInfoWithCompletionBlock:(ModelCompletionBlock)completionBlock{
+    
+    completionBlock(nil,nil);
+    
+         
+}
+
+
 @end
