@@ -163,7 +163,12 @@ static NSString *kCellIdentifier = @"Cell";
         [((UIActivityIndicatorView *)cell.accessoryView) stopAnimating];
         cell.cellImageView.image = [UIImage imageNamed:@"error"];
         
+    } else if ([rowData.imageHref isKindOfClass:[NSNull class]]) {
+        [((UIActivityIndicatorView *)cell.accessoryView) stopAnimating];
+        cell.cellImageView.image = [UIImage imageNamed:@"placeHolder"];
+        
     }
+
     // 5: Otherwise, the image has not been downloaded yet. Start the download and filtering operations (theyíre not yet implemented), and display a placeholder that indicates you are working on it. Start the activity indicator to show user something is going on.
     else {
         
