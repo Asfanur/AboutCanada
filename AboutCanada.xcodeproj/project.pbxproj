@@ -14,6 +14,7 @@
 		3A38565C1AB163A300A5A13B /* AboutCanadaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38565B1AB163A300A5A13B /* AboutCanadaTests.m */; };
 		3A3856681AB1656D00A5A13B /* NetworkModelDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3856671AB1656D00A5A13B /* NetworkModelDownloader.m */; };
 		3A38566B1AB168F600A5A13B /* ConstantCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38566A1AB168F600A5A13B /* ConstantCollection.m */; };
+		3A3856711AB16F4F00A5A13B /* RowData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3856701AB16F4F00A5A13B /* RowData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		3A3856671AB1656D00A5A13B /* NetworkModelDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkModelDownloader.m; path = Model/NetworkModelDownloader.m; sourceTree = "<group>"; };
 		3A3856691AB168F600A5A13B /* ConstantCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConstantCollection.h; path = Helper/ConstantCollection.h; sourceTree = "<group>"; };
 		3A38566A1AB168F600A5A13B /* ConstantCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConstantCollection.m; path = Helper/ConstantCollection.m; sourceTree = "<group>"; };
+		3A38566F1AB16F4F00A5A13B /* RowData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RowData.h; path = Model/RowData.h; sourceTree = "<group>"; };
+		3A3856701AB16F4F00A5A13B /* RowData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RowData.m; path = Model/RowData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 		3A3856651AB1641A00A5A13B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3A38566F1AB16F4F00A5A13B /* RowData.h */,
+				3A3856701AB16F4F00A5A13B /* RowData.m */,
 				3A3856691AB168F600A5A13B /* ConstantCollection.h */,
 				3A38566A1AB168F600A5A13B /* ConstantCollection.m */,
 			);
@@ -232,6 +237,7 @@
 				3A38566B1AB168F600A5A13B /* ConstantCollection.m in Sources */,
 				3A3856681AB1656D00A5A13B /* NetworkModelDownloader.m in Sources */,
 				3A3856421AB163A300A5A13B /* main.m in Sources */,
+				3A3856711AB16F4F00A5A13B /* RowData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
