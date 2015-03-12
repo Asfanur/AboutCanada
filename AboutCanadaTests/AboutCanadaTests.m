@@ -32,7 +32,8 @@
     [NetworkModelDownloader fetchCountryInfoWithCompletionBlock:^(NSDictionary *model, NSError *error) {
         
         XCTAssertNotNil(model, @"data should not be nil");
-         
+        XCTAssertNil(error, @"error should be nil");
+        
         [completionExpectation fulfill];
         
     }];

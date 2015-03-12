@@ -13,6 +13,7 @@
 		3A38564D1AB163A300A5A13B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A38564C1AB163A300A5A13B /* Images.xcassets */; };
 		3A38565C1AB163A300A5A13B /* AboutCanadaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38565B1AB163A300A5A13B /* AboutCanadaTests.m */; };
 		3A3856681AB1656D00A5A13B /* NetworkModelDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3856671AB1656D00A5A13B /* NetworkModelDownloader.m */; };
+		3A38566B1AB168F600A5A13B /* ConstantCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38566A1AB168F600A5A13B /* ConstantCollection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,8 @@
 		3A38565B1AB163A300A5A13B /* AboutCanadaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutCanadaTests.m; sourceTree = "<group>"; };
 		3A3856661AB1656D00A5A13B /* NetworkModelDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkModelDownloader.h; path = Model/NetworkModelDownloader.h; sourceTree = "<group>"; };
 		3A3856671AB1656D00A5A13B /* NetworkModelDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkModelDownloader.m; path = Model/NetworkModelDownloader.m; sourceTree = "<group>"; };
+		3A3856691AB168F600A5A13B /* ConstantCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConstantCollection.h; path = Helper/ConstantCollection.h; sourceTree = "<group>"; };
+		3A38566A1AB168F600A5A13B /* ConstantCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConstantCollection.m; path = Helper/ConstantCollection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 		3A3856651AB1641A00A5A13B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3A3856691AB168F600A5A13B /* ConstantCollection.h */,
+				3A38566A1AB168F600A5A13B /* ConstantCollection.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A3856451AB163A300A5A13B /* AppDelegate.m in Sources */,
+				3A38566B1AB168F600A5A13B /* ConstantCollection.m in Sources */,
 				3A3856681AB1656D00A5A13B /* NetworkModelDownloader.m in Sources */,
 				3A3856421AB163A300A5A13B /* main.m in Sources */,
 			);

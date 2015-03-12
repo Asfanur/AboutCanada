@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 Asfanur Arafin. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "ConstantCollection.h"
 
 @interface NetworkModelDownloader : NSObject
 typedef void (^ModelCompletionBlock) (NSDictionary *model, NSError * error);
