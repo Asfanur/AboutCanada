@@ -17,6 +17,7 @@
 		3A3856711AB16F4F00A5A13B /* RowData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3856701AB16F4F00A5A13B /* RowData.m */; };
 		3A3856771AB1746300A5A13B /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3856761AB1746300A5A13B /* ImageDownloader.m */; };
 		3A38567A1AB17F9800A5A13B /* CanadaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3856791AB17F9800A5A13B /* CanadaTableViewController.m */; };
+		3A3856801AB190BB00A5A13B /* DynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38567F1AB190BB00A5A13B /* DynamicCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		3A3856761AB1746300A5A13B /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageDownloader.m; path = Model/ImageDownloader.m; sourceTree = "<group>"; };
 		3A3856781AB17F9800A5A13B /* CanadaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CanadaTableViewController.h; path = Controller/CanadaTableViewController.h; sourceTree = "<group>"; };
 		3A3856791AB17F9800A5A13B /* CanadaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CanadaTableViewController.m; path = Controller/CanadaTableViewController.m; sourceTree = "<group>"; };
+		3A38567E1AB190BB00A5A13B /* DynamicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DynamicCell.h; path = View/DynamicCell.h; sourceTree = "<group>"; };
+		3A38567F1AB190BB00A5A13B /* DynamicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DynamicCell.m; path = View/DynamicCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				3A3856491AB163A300A5A13B /* Main.storyboard */,
+				3A38567E1AB190BB00A5A13B /* DynamicCell.h */,
+				3A38567F1AB190BB00A5A13B /* DynamicCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				3A38567A1AB17F9800A5A13B /* CanadaTableViewController.m in Sources */,
 				3A38566B1AB168F600A5A13B /* ConstantCollection.m in Sources */,
 				3A3856681AB1656D00A5A13B /* NetworkModelDownloader.m in Sources */,
+				3A3856801AB190BB00A5A13B /* DynamicCell.m in Sources */,
 				3A3856421AB163A300A5A13B /* main.m in Sources */,
 				3A3856711AB16F4F00A5A13B /* RowData.m in Sources */,
 			);

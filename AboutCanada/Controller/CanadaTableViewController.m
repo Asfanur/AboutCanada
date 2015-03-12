@@ -15,6 +15,7 @@
 @end
 
 @implementation CanadaTableViewController
+static NSString *kCellIdentifier = @"Cell";
 
 -(NSMutableArray *)records {
     if (!_records) {
@@ -28,12 +29,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self records];
+    [self initializeRefreshController];
 }
 
 
 
 
+// -------------------------------------------------------------------------------
+//	initializeRefreshController
+//  Add Refresh Controller to the tablevirew
+// -------------------------------------------------------------------------------
 
+-(void)initializeRefreshController{
+    
+    self.refreshControl = [[[UIRefreshControl alloc] init] autorelease];
+    self.refreshControl.backgroundColor = [UIColor purpleColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(refresh)
+                  forControlEvents:UIControlEventValueChanged];
+    
+    
+}
+-(void)refresh {
+    [self downLoadRecord];
+    [self.refreshControl endRefreshing];
+    
+}
+// -------------------------------------------------------------------------------
+//	downLoadRecord
+//  Download json and save it to the records property 
+// -------------------------------------------------------------------------------
 
 -(void)downLoadRecord {
     [NetworkModelDownloader fetchCountryInfoWithCompletionBlock:^(NSDictionary *model, NSError *error) {
@@ -55,6 +81,17 @@
         
     }];
 }
+
+#pragma mark - Table view data source
+// -------------------------------------------------------------------------------
+//	tableView:numberOfRowsInSection:
+//  get number of rows
+// -------------------------------------------------------------------------------
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+     return self.records.count;
+}
+
 
 - (void)dealloc
 {
