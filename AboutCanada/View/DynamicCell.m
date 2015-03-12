@@ -14,8 +14,8 @@
 {
     [super layoutSubviews];
     [self.contentView layoutIfNeeded];
-    self.rowtitle.preferredMaxLayoutWidth = CGRectGetWidth(self.rowtitle.frame);
-    
+    self.rowDescription.preferredMaxLayoutWidth = CGRectGetWidth(self.rowDescription.frame);
+     
 }
 
 

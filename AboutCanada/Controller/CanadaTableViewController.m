@@ -50,6 +50,13 @@ static NSString *kCellIdentifier = @"Cell";
     [super viewDidLoad];
     [self records];
     [self initializeRefreshController];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didChangePreferredContentSize:)
+                                                 name:UIContentSizeCategoryDidChangeNotification object:nil];
+    self.tableView.estimatedRowHeight = 100.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
+    
 }
 
 
@@ -229,6 +236,12 @@ static NSString *kCellIdentifier = @"Cell";
     }
 }
 
+- (void)didChangePreferredContentSize:(NSNotification *)notification
+{
+    [self.tableView reloadData];
+}
+
+
 
 
 #pragma mark - UIScrollViewDelegate
@@ -258,6 +271,11 @@ static NSString *kCellIdentifier = @"Cell";
 
 - (void)dealloc
 {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIContentSizeCategoryDidChangeNotification
+                                                  object:nil];
+
     [_records release];
     [_imageDownloadsInProgress release];
     [_queue release];
