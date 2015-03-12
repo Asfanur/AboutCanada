@@ -10,6 +10,8 @@
 
 @implementation DynamicCell
 
+
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -17,8 +19,6 @@
     self.rowDescription.preferredMaxLayoutWidth = CGRectGetWidth(self.rowDescription.frame);
      
 }
-
-
 
 - (void)dealloc {
     [_rowtitle release];

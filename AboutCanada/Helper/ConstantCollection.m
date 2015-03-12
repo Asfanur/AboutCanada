@@ -10,7 +10,7 @@
 
 @implementation ConstantCollection
 
+//AsfanurArafinErrorDomain constant
 NSString * const AsfanurArafinErrorDomain = @"com.arafin.asfanur.error";
-
 
 @end

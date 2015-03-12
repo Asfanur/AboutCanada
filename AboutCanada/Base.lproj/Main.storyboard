@@ -21,13 +21,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7Q-d8-VdQ">
-                                            <rect key="frame" x="16" y="8" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="16" y="8" width="415" height="20.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fD-v9-snk">
-                                            <rect key="frame" x="16" y="122.5" width="39" height="18"/>
+                                            <rect key="frame" x="16" y="122.5" width="415" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -46,9 +46,9 @@
                                         <constraint firstItem="U7Q-d8-VdQ" firstAttribute="leading" secondItem="c33-Hu-jcb" secondAttribute="leadingMargin" constant="8" id="Sha-19-oxu"/>
                                         <constraint firstItem="U7Q-d8-VdQ" firstAttribute="top" secondItem="DvE-oQ-Ye6" secondAttribute="top" id="Z1V-sb-TYB"/>
                                         <constraint firstItem="DvE-oQ-Ye6" firstAttribute="top" secondItem="c33-Hu-jcb" secondAttribute="topMargin" id="e8J-B3-Hus"/>
-                                        <constraint firstItem="DvE-oQ-Ye6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U7Q-d8-VdQ" secondAttribute="trailing" constant="8" id="gca-n7-MJb"/>
+                                        <constraint firstItem="DvE-oQ-Ye6" firstAttribute="leading" secondItem="U7Q-d8-VdQ" secondAttribute="trailing" constant="8" id="gca-n7-MJb"/>
                                         <constraint firstItem="7fD-v9-snk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="U7Q-d8-VdQ" secondAttribute="bottom" constant="8" id="goP-GC-N0R"/>
-                                        <constraint firstItem="DvE-oQ-Ye6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7fD-v9-snk" secondAttribute="trailing" constant="8" id="joB-Od-k04"/>
+                                        <constraint firstItem="DvE-oQ-Ye6" firstAttribute="leading" secondItem="7fD-v9-snk" secondAttribute="trailing" constant="8" id="joB-Od-k04"/>
                                         <constraint firstItem="U7Q-d8-VdQ" firstAttribute="top" secondItem="c33-Hu-jcb" secondAttribute="topMargin" constant="8" id="qmZ-zu-zM5"/>
                                         <constraint firstItem="7fD-v9-snk" firstAttribute="leading" secondItem="c33-Hu-jcb" secondAttribute="leadingMargin" constant="8" id="yhx-4m-5gK"/>
                                     </constraints>

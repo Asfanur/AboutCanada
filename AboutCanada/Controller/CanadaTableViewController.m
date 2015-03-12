@@ -10,12 +10,12 @@
 #import "NetworkModelDownloader.h"
 #import "ImageDownloader.h"
 #import "DynamicCell.h"
+
 @interface CanadaTableViewController()
+
 @property (nonatomic,retain) NSMutableArray *records;
 @property (nonatomic, retain) NSMutableDictionary *imageDownloadsInProgress;
 @property (nonatomic, retain) NSOperationQueue *queue;
-
-
 
 @end
 
@@ -43,9 +43,6 @@ static NSString *kCellIdentifier = @"Cell";
     return _queue;
 }
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self records];
@@ -55,8 +52,6 @@ static NSString *kCellIdentifier = @"Cell";
                                                  name:UIContentSizeCategoryDidChangeNotification object:nil];
     self.tableView.estimatedRowHeight = 100.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-
-    
 }
 
 
@@ -85,7 +80,7 @@ static NSString *kCellIdentifier = @"Cell";
 }
 // -------------------------------------------------------------------------------
 //	downLoadRecord
-//  Download json and save it to the records property 
+//  Download json and save it to the records property
 // -------------------------------------------------------------------------------
 
 -(void)downLoadRecord {
@@ -99,7 +94,7 @@ static NSString *kCellIdentifier = @"Cell";
             for (NSDictionary *row in model[kRows]) {
                 RowData *rowData = [[[RowData alloc] initWithTitle:row[kRowTitle] withDescription:row[kRowDescription] andImageHref:row[kRowImageHref]] autorelease];
                 [records addObject:rowData];
-                }
+            }
             self.records = records;
             
             [self.tableView reloadData];
@@ -116,8 +111,12 @@ static NSString *kCellIdentifier = @"Cell";
 // -------------------------------------------------------------------------------
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-     return self.records.count;
+    return self.records.count;
 }
+// -------------------------------------------------------------------------------
+// tableView:cellForRowAtIndexPath:indexPath
+//
+// -------------------------------------------------------------------------------
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -129,10 +128,15 @@ static NSString *kCellIdentifier = @"Cell";
     return cell;
 }
 
+// -------------------------------------------------------------------------------
+//	configureCell:atIndexPath:indexPath
+//  configure title and detail of the tableview row
+// -------------------------------------------------------------------------------
+
 -(void)configureCell:(DynamicCell *)cell atIndexPath:(NSIndexPath *)indexPath{
     if (self.records.count>0) {
         RowData *rowData = [self.records objectAtIndex:indexPath.row];
-        
+        //check if title is null
         if([rowData.title isKindOfClass:[NSNull class]]){
             cell.rowtitle.text = @"No Title";
             
@@ -142,6 +146,7 @@ static NSString *kCellIdentifier = @"Cell";
         }
         cell.rowtitle.font =[UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
         
+        //check if rowDescription is null
         if([rowData.rowDescription isKindOfClass:[NSNull class]]){
             cell.rowDescription.text = @"No Title";
             
@@ -158,6 +163,12 @@ static NSString *kCellIdentifier = @"Cell";
     
     
 }
+
+// -------------------------------------------------------------------------------
+//	configureImageView:ofCell:atIndexPath
+//  When image is downloaded add them to the imageview
+// -------------------------------------------------------------------------------
+
 -(void)configureImageView:(RowData *)rowData ofCell:(DynamicCell *)cell  atIndexPath:(NSIndexPath *)indexPath{
     
     if (rowData.hasImage) {
@@ -165,18 +176,20 @@ static NSString *kCellIdentifier = @"Cell";
         cell.cellImageView.image = rowData.image;
         
     }
-    // 4: If downloading the image has failed, display a placeholder to display the failure, and stop the activity indicator.
+    // If downloading the image has failed, display an error to display the failure, and stop the activity indicator.
     else if (rowData.isFailed) {
         [((UIActivityIndicatorView *)cell.accessoryView) stopAnimating];
         cell.cellImageView.image = [UIImage imageNamed:@"error"];
         
-    } else if ([rowData.imageHref isKindOfClass:[NSNull class]]) {
+    } // If image href is null the set the imageview to nil and stop activity indicator.
+    
+    else if ([rowData.imageHref isKindOfClass:[NSNull class]]) {
         [((UIActivityIndicatorView *)cell.accessoryView) stopAnimating];
-        cell.cellImageView.image = [UIImage imageNamed:@"placeHolder"];
+        cell.cellImageView.image = nil;
         
     }
-
-    // 5: Otherwise, the image has not been downloaded yet. Start the download and filtering operations (theyíre not yet implemented), and display a placeholder that indicates you are working on it. Start the activity indicator to show user something is going on.
+    
+    // the image has not been downloaded yet.Start the activity indicator.
     else {
         
         [((UIActivityIndicatorView *)cell.accessoryView) startAnimating];
@@ -190,6 +203,11 @@ static NSString *kCellIdentifier = @"Cell";
     
 }
 
+// -------------------------------------------------------------------------------
+//	startImageDownload:forIndexPath
+//  Download image for a perticuler row
+// -------------------------------------------------------------------------------
+
 - (void)startImageDownload:(RowData *)rowData forIndexPath:(NSIndexPath *)indexPath
 {
     ImageDownloader *imageDownloader = (self.imageDownloadsInProgress)[indexPath];
@@ -202,9 +220,6 @@ static NSString *kCellIdentifier = @"Cell";
                 
                 // Display the newly loaded image
                 [self configureImageView:rowData ofCell:cell atIndexPath:indexPath];
-                
-                // Remove the IconDownloader from the in progress list.
-                // This will result in it being deallocated.
                 [self.imageDownloadsInProgress removeObjectForKey:indexPath];
                 
             });
@@ -218,6 +233,12 @@ static NSString *kCellIdentifier = @"Cell";
         }
     }
 }
+
+// -------------------------------------------------------------------------------
+//	loadImagesForOnscreenRows:
+//  Load images for all onscreen rows
+// -------------------------------------------------------------------------------
+
 - (void)loadImagesForOnscreenRows
 {
     if (self.records.count > 0)
@@ -235,6 +256,12 @@ static NSString *kCellIdentifier = @"Cell";
         }
     }
 }
+
+// -------------------------------------------------------------------------------
+//	didChangePreferredContentSize:
+//  Get called when preferred content size changes
+// -------------------------------------------------------------------------------
+
 
 - (void)didChangePreferredContentSize:(NSNotification *)notification
 {
@@ -271,16 +298,15 @@ static NSString *kCellIdentifier = @"Cell";
 
 - (void)dealloc
 {
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIContentSizeCategoryDidChangeNotification
                                                   object:nil];
-
+    
     [_records release];
     [_imageDownloadsInProgress release];
     [_queue release];
     
-     _records = nil;
+    _records = nil;
     _imageDownloadsInProgress = nil;
     _queue = nil;
     
