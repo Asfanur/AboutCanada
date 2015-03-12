@@ -86,6 +86,25 @@ static NSString *kCellIdentifier = @"Cell";
 -(void)downLoadRecord {
     [NetworkModelDownloader fetchCountryInfoWithCompletionBlock:^(NSDictionary *model, NSError *error) {
         if (error) {
+            UIAlertController * alert=   [UIAlertController
+                                          alertControllerWithTitle:@"Error"
+                                          message:error.localizedDescription
+                                          preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* ok = [UIAlertAction
+                                 actionWithTitle:@"OK"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+            
+            [alert addAction:ok];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+            
+            
             
         } else {
             self.title = [model objectForKey:kTitle];
