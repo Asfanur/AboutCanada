@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Mg-0Y-DUK">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -35,7 +34,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DvE-oQ-Ye6">
                                             <rect key="frame" x="439" y="8" width="120" height="133"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="120" id="UpL-5X-ziT"/>
+                                                <constraint firstAttribute="width" priority="750" constant="120" id="UpL-5X-ziT"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
